@@ -18,7 +18,7 @@ def analyze(request):
     attr=["N","P","K","temperature","humidity","rainfall","label"]
     if crop.isna().any().sum() !=0:
         for i in range(len(attr)):
-            crop[atrr[i]].fillna(0.0, inplace = True)
+            crop[attr[i]].fillna(0.0, inplace = True)
 
     #Remove unwanted parts from strings in a column 
     crop.columns = crop.columns.str.replace(' ', '') 
